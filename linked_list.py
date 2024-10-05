@@ -31,7 +31,19 @@ class LinkedList:
         while currentNode and currentNode.next:
             if currentNode.data == data:
                 self.head = currentNode.next
-                currentNode = None
             if currentNode.next.data == data:
                 currentNode.next = currentNode.next.next
+            currentNode = currentNode.next
+    
+    def insertAfter(self, key, data):
+        currentNode = self.head
+        if not currentNode:
+            print("the linked list is empty")
+            return
+        while currentNode and currentNode.next:
+            if currentNode.data == key:
+                newNode = Node(data)
+                newNode.next = currentNode.next
+                currentNode.next = newNode
+                return
             currentNode = currentNode.next
