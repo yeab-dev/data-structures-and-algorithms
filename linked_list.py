@@ -47,3 +47,18 @@ class LinkedList:
                 currentNode.next = newNode
                 return
             currentNode = currentNode.next
+    def insertAt(self, index, data):
+        if index < 0:
+            print("invalid index detected")
+        count = 0
+        currentNode = self.head
+        while currentNode and  index >= count:
+            if index -1 == count:
+                newNode = Node(data)
+                newNode.next = currentNode.next
+                currentNode.next = newNode
+                return
+            if currentNode.next == None:
+                print("the index you entered is out of range")
+            count += 1
+            currentNode = currentNode.next
