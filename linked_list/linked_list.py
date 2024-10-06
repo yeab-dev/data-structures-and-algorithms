@@ -7,7 +7,8 @@ class LinkedList:
     def append(self, data):
         newNode = Node(data)
         if not self.head:
-           self.head, self.tail = newNode
+           self.head = newNode
+           self.tail = newNode
            newNode.next = newNode
            newNode.previous = newNode
            return
@@ -19,7 +20,8 @@ class LinkedList:
     def prepend(self, data):
         newNode = Node(data)
         if not self.head:
-           self.head, self.tail = newNode
+           self.head = newNode
+           self.tail = newNode
            self.head.previous = self.tail
            self.tail.next = self.head
            return
