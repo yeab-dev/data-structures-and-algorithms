@@ -4,6 +4,18 @@ class LinkedList:
     def __init__(self):
         self.head: Node = None 
         self.tail: Node = None
+    def display(self):
+        if not self.head:
+            print("nothing to show")
+            return
+        currentNode = self.head
+        while currentNode.next:
+            if (currentNode == self.tail):
+                print(currentNode.data)
+                return
+            print("{0}->".format(currentNode.data))
+            currentNode = currentNode.next
+
     def append(self, data):
         newNode = Node(data)
         if not self.head:
