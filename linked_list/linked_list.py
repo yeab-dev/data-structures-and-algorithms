@@ -42,3 +42,39 @@ class LinkedList:
         self.head.previous = newNode
         self.tail.next = newNode
         self.head = newNode
+    
+    def delete(self, data):
+        if not self.head:
+            print("not found!")
+            return
+
+        currentNode = self.head 
+        if currentNode.data == data:
+            if currentNode.next == self.head:
+                self.head = None
+                self.tail = None
+                return
+            
+            currentNode.next.previous = currentNode.previous
+            currentNode.previous.next = currentNode.next
+            self.head = currentNode.next
+            self.tail.next = self.head
+            self.head.previous = self.tail
+            return
+        currentNode = self.tail
+        if currentNode.data == data:
+            currentNode.previous.next = self.head
+            self.head.previous = currentNode.previous
+            self.tail = currentNode.previous
+            return
+        
+        currentNode = self.head.next
+        while not currentNode.data == data:
+            if currentNode.data == data:
+                currentNode.previous.next = currentNode.next
+                currentNode.next.previous = currentNode.previous
+                currentNode = None
+                return
+            currentNode = currentNode.next
+        
+        print("{0} was not found in the list".format(data))
