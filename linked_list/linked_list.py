@@ -90,3 +90,27 @@ class LinkedList:
         if currentNode.data == data:
             return count
         return -1
+    
+    def insertAfter(self, data, newData):
+        if not self.head:
+            print("the list is empty")
+            return        
+        currentNode = self.head
+        newNode = Node(newData)
+        if self.tail.data == data:
+            self.tail.next.previous = newNode
+            newNode.previous = self.tail
+            newNode.next = self.head
+            self.tail.next = newNode
+            self.tail = newNode
+            return
+        while not currentNode.data == data:
+            currentNode = currentNode.next
+            if currentNode == self.head:
+               print("{0} not found in the list".format(data))
+               return 
+        
+        newNode.next = currentNode.next
+        newNode.previous = currentNode
+        newNode.next.previous = newNode
+        currentNode.next = newNode
