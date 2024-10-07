@@ -78,3 +78,15 @@ class LinkedList:
             currentNode = currentNode.next
         
         print("{0} was not found in the list".format(data))
+    
+    def indexOf(self, data) -> int:
+        if not self.head:
+            return -1
+        currentNode = self.head
+        count = 0
+        while not currentNode == self.tail and not currentNode.data == data:
+            currentNode = currentNode.next
+            count += 1
+        if currentNode.data == data:
+            return count
+        return -1
