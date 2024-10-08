@@ -13,7 +13,7 @@ class LinkedList:
             if (currentNode == self.tail):
                 print(currentNode.data)
                 return
-            print("{0}->".format(currentNode.data))
+            print("{0}<->".format(currentNode.data))
             currentNode = currentNode.next
 
     def append(self, data):
