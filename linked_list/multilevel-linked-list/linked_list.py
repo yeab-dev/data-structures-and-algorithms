@@ -12,3 +12,18 @@ class LinkedList:
            return
         self.tail.next = newNode
         self.tail = newNode 
+
+    def at(self, index) -> Optional[Node]:
+        if index < 0:
+            print("not valid index")
+            return
+        if not self.head:
+            return None
+        count = 0
+        currentNode = self.head
+        while index > count:
+            if not currentNode:
+                return None
+            count += 1
+            currentNode = currentNode.next
+        return currentNode
