@@ -26,3 +26,11 @@ class LinkedList:
             count += 1
             currentNode = currentNode.next
         return currentNode
+    def insertChild(self, index, child): 
+        if not child:
+            raise TypeError("child can't be null")
+        try:
+            parentNode = self.at(index)
+        except IndexError as e:
+            raise IndexError(f"Cannot insert child at index: {index}: {str(e)}")
+        parentNode.child = child
