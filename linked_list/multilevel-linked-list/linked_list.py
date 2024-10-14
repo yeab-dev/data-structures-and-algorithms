@@ -15,15 +15,14 @@ class LinkedList:
 
     def at(self, index) -> Optional[Node]:
         if index < 0:
-            print("not valid index")
-            return
+            raise IndexError(f"Index less than zero ({index})")
         if not self.head:
             return None
         count = 0
         currentNode = self.head
         while index > count:
             if not currentNode:
-                return None
+                raise IndexError(f"Index out of range {index}\n max is {count}")
             count += 1
             currentNode = currentNode.next
         return currentNode
