@@ -7,7 +7,7 @@ class Queue:
         self.queue.append(val)
     def dequeue(self):
         if not self.queue.head:
-            raise RuntimeError("Cannot dequeue from an empty queue")
+            raise IndexError("Cannot dequeue from an empty queue")
         if self.queue.head == self.queue.tail:
             nodeToRemove = self.queue.head
             self.queue.head = None
