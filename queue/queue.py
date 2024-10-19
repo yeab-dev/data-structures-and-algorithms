@@ -22,3 +22,7 @@ class Queue:
         if not self.queue.head:
             raise IndexError("Empty queue")
         return self.queue.head.data
+    def isEmpty(self):
+        return self.queue.head == None
+    def size(self):
+        return self.queue.size()
