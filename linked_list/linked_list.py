@@ -114,3 +114,11 @@ class LinkedList:
         newNode.previous = currentNode
         newNode.next.previous = newNode
         currentNode.next = newNode
+    def size(self):
+        if not self.head:
+            return 0
+        currentNode = self.head
+        size = 1
+        while not currentNode == self.tail:
+            currentNode = currentNode.next
+            size += 1
