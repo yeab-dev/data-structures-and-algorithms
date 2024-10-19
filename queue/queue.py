@@ -18,3 +18,7 @@ class Queue:
         self.queue.head = self.queue.head.next
         self.queue.head.previous = self.queue.tail
         return nodeToRemove.data
+    def peek(self):
+        if not self.queue.head:
+            raise IndexError("Empty queue")
+        return self.queue.head.data
