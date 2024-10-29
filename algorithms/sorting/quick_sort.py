@@ -6,4 +6,4 @@ def quick_sort(nums:List[int]):
     pivot = nums[Random().randint(0, len(nums) - 1)] 
     left = [x for x in nums if x < pivot]
     right = [x for x in nums if x > pivot]
-    return quick_sort(less) + [pivot] + quick_sort(greater)
+    return quick_sort(left) + [pivot] + quick_sort(right)
