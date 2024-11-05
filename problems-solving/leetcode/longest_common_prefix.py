@@ -1,9 +1,8 @@
 from typing import List
-
-
-class Solution():
+class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        l = strs[0][0]
-        for str in strs:
-            if str.startswith(l):
-                continue
+        prefix = strs[0]
+        for word in strs:
+            while not word.startswith(prefix):
+                prefix = prefix[:-1]
+        return prefix
