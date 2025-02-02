@@ -13,7 +13,7 @@ graph:  Dict[str,str] = {
 
 def bsd(network: dict) ->str:
     search_queue = deque()
-    search_queue += network["tola"]
+    search_queue += network[list(network.keys())[0]]
     while search_queue:
         person = search_queue.popleft()
         if person[-1] == "n":
