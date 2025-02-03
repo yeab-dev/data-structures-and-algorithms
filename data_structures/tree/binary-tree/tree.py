@@ -1,8 +1,21 @@
 from node import Node
-from typing import Any
+from typing import Any, List
 class Tree:
     def __init__(self):
         self.root = None
+    
+    def _in_order_traversal(self, node: Node, result: List[Any]):
+        if not node:
+            return
+        else:
+            self._in_order_traversal(node.left, result)
+            result.append(node.val)
+            self._in_order_traversal(node.right, result)
+    
+    def sort(self):
+        result = []
+        self._in_order_traversal(self.root, result)
+        return result
     
     def insert(self, val: Any): 
         newNode = Node(val= val)
@@ -23,3 +36,4 @@ class Tree:
                     return
                 else:
                     node = node.left
+    
