@@ -1,6 +1,5 @@
 class Solution:
     def areAlmostEqual(self, s1: str, s2: str) -> bool:
-        index = 0
         d = []
         if s1 == s2:
             return True
