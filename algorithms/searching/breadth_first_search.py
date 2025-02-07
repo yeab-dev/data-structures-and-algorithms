@@ -11,7 +11,7 @@ graph:  Dict[str,str] = {
     }
 
 
-def bsd(network: dict) ->str:
+def bfs(network: dict) ->str:
     search_queue = deque()
     search_queue += network[list(network.keys())[0]]
     while search_queue:
