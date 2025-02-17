@@ -12,5 +12,3 @@ class Solution:
                 right_ones -= 1
             result = max(result, left_zeroes+right_ones)
         return result
-
-print(Solution().maxScore("011101"))
